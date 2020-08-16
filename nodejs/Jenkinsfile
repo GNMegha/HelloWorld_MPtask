@@ -1,15 +1,9 @@
 def PATH = '/home/mp_task/HelloWorld_MPtask/nodejs'
 pipeline {
         agent any
-        triggers {pollSCM ''}
         stages {
-                stage ('clone'){
-                steps () {
-                        sh """
-                        # checkout scm
-                        git url : 'https://github.com/GNMegha/HelloWorld_MPtask.git'
-                        """
-                        }
+                stage ('checkout'){
+                           checkout scm
                      }
                 stage ('build'){
                 steps {
