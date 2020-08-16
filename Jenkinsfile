@@ -1,4 +1,4 @@
-def PATH = '/home/mp_task/HelloWorld_MPtask/nodejs'
+#def PATH = '/home/mp_task/HelloWorld_MPtask/nodejs'
 pipeline {
         agent any
         stages {
@@ -10,7 +10,7 @@ pipeline {
                 stage ('build'){
                 steps {
                         sh """
-                            cd $PATH
+                            #cd $PATH
                             docker build -t Dockerfile .
                            """
                        }
